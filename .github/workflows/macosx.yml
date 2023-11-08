@@ -1,0 +1,14 @@
+name: macOS X
+
+on: workflow_dispatch
+
+jobs:
+  windows:
+
+    runs-on: macos-latest
+    timeout-minutes: 9999
+
+    steps:
+    - name: echo HI
+      run: echo HI
+      
