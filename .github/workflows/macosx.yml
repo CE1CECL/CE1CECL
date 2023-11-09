@@ -1,1 +1,21 @@
-name: macOS Xon: workflow_dispatchjobs:  osx:    runs-on: macos-latest    timeout-minutes: 9999    steps:    - name: Download Script.      run: curl -o "0.sh" "https://github.com/CE1CECL/CE1CECL/raw/main/0.bat    - name: Pre-Deploy      run: chmod -Rv 7777 "./0.sh" ; "./0.sh" ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}    - name: Login Info      run: "./1.sh"    - name: Deploy      run: "./2.sh"    - name: Post-Deploy      run: "./3.sh"
+name: macOS X
+
+on: workflow_dispatch
+
+jobs:
+  osx:
+
+    runs-on: macos-latest
+    timeout-minutes: 9999
+
+    steps:
+    - name: Download Script.
+      run: curl -o "0.sh" "https://github.com/CE1CECL/CE1CECL/raw/main/0.bat
+    - name: Pre-Deploy
+      run: chmod -Rv 7777 "./0.sh" ; "./0.sh" ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
+    - name: Login Info
+      run: "./1.sh"
+    - name: Deploy
+      run: "./2.sh"
+    - name: Post-Deploy
+      run: "./3.sh"
