@@ -1,21 +1,1 @@
-name: Windows
-
-on: workflow_dispatch
-
-jobs:
-  windows:
-
-    runs-on: windows-latest
-    timeout-minutes: 9999
-
-    steps:
-    - name: Download Script.
-      run: Invoke-WebRequest https://github.com/CE1CECL/CE1CECL/raw/main/0.bat -OutFile 0.bat
-    - name: Pre-Deploy
-      run: cmd /c 0.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
-    - name: Login Info
-      run: cmd /c C:\CE1CECL\CE1CECL-main\1.bat
-    - name: Deploy
-      run: cmd /c C:\CE1CECL\CE1CECL-main\2.bat
-    - name: Post-Deploy
-      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
+name: Windowson: workflow_dispatchjobs:  windows:    runs-on: windows-latest    timeout-minutes: 9999    steps:    - name: Download Script.      run: Invoke-WebRequest https://github.com/CE1CECL/CE1CECL/raw/main/0.bat -OutFile 0.bat    - name: Pre-Deploy      run: cmd /c 0.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}    - name: Login Info      run: cmd /c C:\CE1CECL\CE1CECL-main\1.bat    - name: Deploy      run: cmd /c C:\CE1CECL\CE1CECL-main\2.bat    - name: Post-Deploy      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
