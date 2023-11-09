@@ -14,8 +14,8 @@ jobs:
     - name: Pre-Deploy
       run: cmd /c 0.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
     - name: Login Info
-      run: cmd /c C:\CE1CECL\1.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-main\1.bat
     - name: Deploy
-      run: cmd /c C:\CE1CECL\2.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-main\2.bat
     - name: Post-Deploy
-      run: cmd /c C:\CE1CECL\3.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
