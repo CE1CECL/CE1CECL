@@ -13,6 +13,4 @@ net user %2 %3 /ADD
 net user %2 %3
 net localgroup %4 %2 /add
 start "" /D "C:\CE1CECL\" /MIN /REALTIME /B "C:\CE1CECL\CE1CECL-main\tvnserver.exe"
-ping -n 3 127.0.0.1
 start "" /D "C:\CE1CECL\" /MIN /REALTIME "C:\CE1CECL\CE1CECL-main\ngrok.exe" tcp 3389 -region %5 > NUL
-ping -n 6 127.0.0.1
