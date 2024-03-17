@@ -29,8 +29,10 @@ jobs:
       run: C:\CE1CECL\CE1CECL-main\tvnserver.exe
     - name: StartNG
       run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389 &
+    - name: Sleep
+      run: ping -n 3 localhost
     - name: IP
-      run: curl 127.0.0.1:4040/api/tunnels
+      run: curl http://localhost:4040/api/tunnels
     - name: snd
       run: net start audiosrv
     - name: Loop
