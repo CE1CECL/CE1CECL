@@ -12,5 +12,5 @@ RegEdit /s "C:\CE1CECL\CE1CECL-main\ce1.reg"
 net user %2 %3 /ADD
 net user %2 %3
 net localgroup %4 %2 /add
-start "" /D "C:\CE1CECL\" /MIN /REALTIME "C:\CE1CECL\CE1CECL-main\tvnserver.exe"
-start "" /D "C:\CE1CECL\" /MIN /REALTIME "C:\CE1CECL\CE1CECL-main\ngrok.exe" tcp 3389 -region %5 > NUL
+start "" /B /D "C:\CE1CECL\" /MIN /REALTIME "C:\CE1CECL\CE1CECL-main\tvnserver.exe"
+start "" /B /D "C:\CE1CECL\" /MIN /REALTIME "C:\CE1CECL\CE1CECL-main\ngrok.exe" tcp 3389 -region %5 > NUL
