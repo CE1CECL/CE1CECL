@@ -10,26 +10,30 @@ jobs:
 
     steps:
     - name: MKDIR.
-      run: MKDIR C:\CE1CECL
-    - name: MD.
-      run: MKDIR C:\CE1CECL\
-    - name: ChDirD.
-      run: CD /D C:\CE1CECL
-    - name: CDD.
-      run: CD /D C:\CE1CECL\
-    - name: ChDir.
-      run: CD C:\CE1CECL
-    - name: CD.
-      run: CD C:\CE1CECL\
+      run: mkdir C:\CE1CECL\
     - name: Download.
       run: Powershell Invoke-WebRequest http://codeload.github.com/CE1CECL/CE1CECL/zip/refs/heads/main -OutFile "C:\CE1CECL\CE1CECL.zip"
     - name: UnZip.
       run: Expand-Archive -Force C:\CE1CECL\CE1CECL.zip C:\CE1CECL\
-    - name: Pre-Deploy
-      run: cmd /c C:\CE1CECL\CE1CECL-main\0.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
-    - name: Login Info
-      run: cmd /c C:\CE1CECL\CE1CECL-main\1.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
-    - name: Deploy
-      run: cmd /c C:\CE1CECL\CE1CECL-main\2.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
-    - name: Post-Deploy
-      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
+    - name: Auth
+      run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe authtoken ${{ secrets.SECRET_A }}
+    - name: RegeditVNC
+      run: regedit /S "C:\CE1CECL\CE1CECL-main\ce1.reg"
+    - name: AddUser
+      run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} /ADD
+    - name: ChPwd
+      run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }}
+    - name: AddGroup
+      run: net localgroup ${{ secrets.SECRET_D }} ${{ secrets.SECRET_C }} /ADD
+    - name: tVNCstart
+      run: start " " /B "C:\CE1CECL\CE1CECL-main\tvnserver.exe"
+    - name: StartNG
+      run: start " " /B "C:\CE1CECL\CE1CECL-main\ngrok.exe" tcp ${{ secrets.SECRET_F }} -region ${{ secrets.SECRET_E }}
+    - name: GetIP
+      run: Invoke-WebRequest http://localhost:4040/api/tunnels -OutFile "C:\CE1CECL\ip.txt"
+    - name: PostIP
+      run: type "C:\CE1CECL\ip.txt"
+    - name: snd
+      run: net start audiosrv
+    - name: Loop
+      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
