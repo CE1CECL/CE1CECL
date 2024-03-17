@@ -3,4 +3,4 @@ CD /D C:\CE1CECL
 CD /D C:\CE1CECL\
 CD C:\CE1CECL
 CD C:\CE1CECL\
-net start audiosrv
+start "" /B /D "C:\CE1CECL\" /MIN /REALTIME net start audiosrv
