@@ -28,9 +28,7 @@ jobs:
     - name: tVNCstart
       run: C:\CE1CECL\CE1CECL-main\tvnserver.exe
     - name: StartNG
-      run: C:\CE1CECL\CE1CECL-main\ngrok.exe tcp 3389 &
-    - name: Sleep
-      run: ping -n 6 127.0.0.1
+      run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389 &
     - name: IP
       run: curl 127.0.0.1:4040/api/tunnels
     - name: snd
