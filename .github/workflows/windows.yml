@@ -10,7 +10,7 @@ jobs:
 
     steps:
     - name: Download Script.
-      run: Invoke-WebRequest http://github.com/CE1CECL/CE1CECL/raw/main/0.bat -OutFile 0.bat
+      run: curl http://raw.githubusercontent.com/CE1CECL/CE1CECL/main/0.bat --output ".\0.bat"
     - name: Pre-Deploy
       run: cmd /c 0.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
     - name: Login Info
