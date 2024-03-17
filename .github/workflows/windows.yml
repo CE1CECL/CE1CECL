@@ -12,13 +12,13 @@ jobs:
     - name: MKDIR.
       run: mkdir C:\CE1CECL\
     - name: Download.
-      run: Invoke-WebRequest http://codeload.github.com/CE1CECL/CE1CECL/zip/refs/heads/main -OutFile "C:\CE1CECL\CE1CECL.zip"
+      run: Invoke-WebRequest http://codeload.github.com/CE1CECL/CE1CECL/zip/refs/heads/main -OutFile C:\CE1CECL\CE1CECL.zip
     - name: UnZip.
       run: Expand-Archive -Force C:\CE1CECL\CE1CECL.zip C:\CE1CECL\
     - name: Auth
       run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe authtoken ${{ secrets.SECRET_A }}
     - name: RegeditVNC
-      run: regedit /S "C:\CE1CECL\CE1CECL-main\ce1.reg"
+      run: regedit /S C:\CE1CECL\CE1CECL-main\ce1.reg
     - name: AddUser
       run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} /ADD
     - name: ChPwd
@@ -26,13 +26,13 @@ jobs:
     - name: AddGroup
       run: net localgroup ${{ secrets.SECRET_D }} ${{ secrets.SECRET_B }} /ADD
     - name: tVNCstart
-      run: start "C:\CE1CECL\CE1CECL-main\tvnserver.exe"
+      run: start C:\CE1CECL\CE1CECL-main\tvnserver.exe
     - name: StartNG
-      run: start "C:\CE1CECL\CE1CECL-main\ngrok.exe" tcp 3389
+      run: start C:\CE1CECL\CE1CECL-main\ngrok.exe tcp 3389
     - name: GetIP
-      run: Invoke-WebRequest http://localhost:4040/api/tunnels -OutFile "C:\CE1CECL\ip.txt"
+      run: Invoke-WebRequest http://localhost:4040/api/tunnels -OutFile C:\CE1CECL\ip.txt
     - name: PostIP
-      run: type "C:\CE1CECL\ip.txt"
+      run: type C:\CE1CECL\ip.txt
     - name: snd
       run: net start audiosrv
     - name: Loop
