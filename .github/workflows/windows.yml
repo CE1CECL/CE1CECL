@@ -9,13 +9,27 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: Download Script.
-      run: Invoke-WebRequest http://raw.githubusercontent.com/CE1CECL/CE1CECL/main/0.bat -OutFile 0.bat
+    - name: MKDIR.
+      run: MKDIR C:\CE1CECL
+    - name: MD.
+      run: MKDIR C:\CE1CECL\
+    - name: ChDirD.
+      run: CD /D C:\CE1CECL
+    - name: CDD.
+      run: CD /D C:\CE1CECL\
+    - name: ChDir.
+      run: CD C:\CE1CECL
+    - name: CD.
+      run: CD C:\CE1CECL\
+    - name: Download.
+      run: Powershell Invoke-WebRequest http://codeload.github.com/CE1CECL/CE1CECL/zip/refs/heads/main -OutFile "C:\CE1CECL\CE1CECL.zip"
+    - name: UnZip.
+      run: Expand-Archive -Force C:\CE1CECL\CE1CECL.zip C:\CE1CECL\
     - name: Pre-Deploy
-      run: cmd /c 0.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
+      run: cmd /c C:\CE1CECL\CE1CECL-main\0.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
     - name: Login Info
-      run: cmd /c C:\CE1CECL\CE1CECL-main\1.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-main\1.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
     - name: Deploy
-      run: cmd /c C:\CE1CECL\CE1CECL-main\2.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-main\2.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
     - name: Post-Deploy
-      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }} ${{ secrets.SECRET_E }}
