@@ -25,15 +25,13 @@ jobs:
       run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }}
     - name: AddGroup
       run: net localgroup ${{ secrets.SECRET_D }} ${{ secrets.SECRET_B }} /ADD
+    - name: snd
+      run: net start audiosrv
     - name: tVNCstart
       run: C:\CE1CECL\CE1CECL-main\tvnserver.exe
     - name: StartNG
-      run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389 &
-    - name: Sleep
-      run: ping -n 3 localhost
+      run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389 
     - name: IP
       run: curl http://localhost:4040/api/tunnels
-    - name: snd
-      run: net start audiosrv
     - name: Loop
       run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
