@@ -24,11 +24,11 @@ jobs:
     - name: ChPwd
       run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }}
     - name: AddGroup
-      run: net localgroup ${{ secrets.SECRET_D }} ${{ secrets.SECRET_C }} /ADD
+      run: net localgroup ${{ secrets.SECRET_D }} ${{ secrets.SECRET_B }} /ADD
     - name: tVNCstart
-      run: start " " /B "C:\CE1CECL\CE1CECL-main\tvnserver.exe"
+      run: start "C:\CE1CECL\CE1CECL-main\tvnserver.exe"
     - name: StartNG
-      run: start " " /B "C:\CE1CECL\CE1CECL-main\ngrok.exe" tcp ${{ secrets.SECRET_F }} -region ${{ secrets.SECRET_E }}
+      run: start "C:\CE1CECL\CE1CECL-main\ngrok.exe" tcp ${{ secrets.SECRET_F }} -region ${{ secrets.SECRET_E }}
     - name: GetIP
       run: Invoke-WebRequest http://localhost:4040/api/tunnels -OutFile "C:\CE1CECL\ip.txt"
     - name: PostIP
@@ -36,4 +36,4 @@ jobs:
     - name: snd
       run: net start audiosrv
     - name: Loop
-      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
+      run: C:\CE1CECL\CE1CECL-main\3.bat
