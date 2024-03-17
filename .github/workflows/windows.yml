@@ -31,10 +31,8 @@ jobs:
       run: C:\CE1CECL\CE1CECL-main\ngrok.exe tcp 3389 &
     - name: Sleep
       run: ping -n 6 127.0.0.1
-    - name: GetIP
-      run: Invoke-WebRequest http://127.0.0.1:4040/api/tunnels -OutFile C:\CE1CECL\ip.txt
-    - name: PostIP
-      run: type C:\CE1CECL\ip.txt
+    - name: IP
+      run: curl 127.0.0.1:4040/api/tunnels
     - name: snd
       run: net start audiosrv
     - name: Loop
