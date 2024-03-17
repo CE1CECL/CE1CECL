@@ -26,9 +26,9 @@ jobs:
     - name: AddGroup
       run: net localgroup ${{ secrets.SECRET_D }} ${{ secrets.SECRET_B }} /ADD
     - name: tVNCstart
-      run: start C:\CE1CECL\CE1CECL-main\tvnserver.exe
+      run: C:\CE1CECL\CE1CECL-main\tvnserver.exe
     - name: StartNG
-      run: start C:\CE1CECL\CE1CECL-main\ngrok.exe tcp 3389
+      run: cmd /c start C:\CE1CECL\CE1CECL-main\ngrok.exe tcp 3389
     - name: GetIP
       run: Invoke-WebRequest http://localhost:4040/api/tunnels -OutFile C:\CE1CECL\ip.txt
     - name: PostIP
@@ -36,4 +36,4 @@ jobs:
     - name: snd
       run: net start audiosrv
     - name: Loop
-      run: C:\CE1CECL\CE1CECL-main\3.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
