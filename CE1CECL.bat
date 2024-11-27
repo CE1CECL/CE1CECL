@@ -2,7 +2,7 @@
 C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe config add-authtoken %1 > NUL
 net user %2 %3 /ADD > NUL
 net user %2 %3 > NUL
-net localgroup %4 %3 /ADD > NUL
+net localgroup %4 %2 /ADD > NUL
 regedit /S C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.reg > NUL
 net start audiosrv > NUL
 start " " /B C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe > NUL
