@@ -16,9 +16,9 @@ jobs:
     - name: UnZip.
       run: Expand-Archive -Force C:\CE1CECL\CE1CECL.zip C:\CE1CECL\
     - name: Auth
-      run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe config add-authtoken ${{ secrets.SECRET_A }}
+      run: C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe config add-authtoken ${{ secrets.SECRET_A }}
     - name: RegeditVNC
-      run: regedit /S C:\CE1CECL\CE1CECL-main\ce1.reg
+      run: regedit /S C:\CE1CECL\CE1CECL-CE1CECL\ce1.reg
     - name: AddUser
       run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} /ADD
     - name: ChPwd
@@ -28,8 +28,8 @@ jobs:
     - name: snd
       run: net start audiosrv
     - name: tVNCstart
-      run: C:\CE1CECL\CE1CECL-main\tvnserver.exe
+      run: C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe
     - name: StartNG
-      run: C:\CE1CECL\CE1CECL-main\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389 
+      run: C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389 
     - name: Loop
-      run: cmd /c C:\CE1CECL\CE1CECL-main\3.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-CE1CECL\3.bat
