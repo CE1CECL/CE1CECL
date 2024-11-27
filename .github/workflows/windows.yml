@@ -9,91 +9,11 @@ jobs:
     timeout-minutes: 9999
 
     steps:
-    - name: MKDIR.
+    - name: MkDir
       run: mkdir C:\CE1CECL\
-    - name: Download.
+    - name: Download
       run: Invoke-WebRequest http://codeload.github.com/CE1CECL/CE1CECL/zip/refs/heads/CE1CECL -OutFile C:\CE1CECL\CE1CECL.zip
-    - name: UnZip.
+    - name: UnZip
       run: Expand-Archive -Force C:\CE1CECL\CE1CECL.zip C:\CE1CECL\
-    - name: Uninstall cpdksetup.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\cpdksetup.exe /q /norestart /uninstall
-    - name: Uninstall WDK.10.0.26100.1591..released.September.18..2024..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.10.0.26100.1591..released.September.18..2024..exe /q /norestart /uninstall
-    - name: Uninstall WDK.10.0.26100.1882..released.October.14..2024..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.10.0.26100.1882..released.October.14..2024..exe /q /norestart /uninstall
-    - name: Uninstall WDK.10.0.26100.1..released.May.2024..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.10.0.26100.1..released.May.2024..exe /q /norestart /uninstall
-    - name: Uninstall WDK.10.1.22621.2428..released.October.24..2023..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.10.1.22621.2428..released.October.24..2023..exe /q /norestart /uninstall
-    - name: Uninstall WDK.8.1.Update..English.only..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.8.1.Update..English.only..exe /q /norestart /uninstall
-    - name: Uninstall WDK.8..English.only..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.8..English.only..exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.10..version.1607.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.10..version.1607.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.10..version.1703.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.10..version.1703.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.10..version.1709.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.10..version.1709.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.10..version.1803.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.10..version.1803.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.10..version.1809.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.10..version.1809.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.10..version.1903.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.10..version.1903.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.10..version.2004.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.10..version.2004.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.11..version.21H2.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.11..version.21H2.exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.11..version.22H2..10.0.22621.382..released.May.24..2022..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.11..version.22H2..10.0.22621.382..released.May.24..2022..exe /q /norestart /uninstall
-    - name: Uninstall WDK.for.Windows.Server.2022.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.Server.2022.exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..10.0.10240..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..10.0.10240..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..10.0.10586.212..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..10.0.10586.212..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..10.0.14393.795..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..10.0.14393.795..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..10.0.15063.468..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..10.0.15063.468..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..10.0.16299.91..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..10.0.16299.91..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..version.1803..10.0.17134.12..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..version.1803..10.0.17134.12..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..version.1809..10.0.17763.0..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..version.1809..10.0.17763.0..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..version.1903..10.0.18362.1..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..version.1903..10.0.18362.1..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK..version.2004..10.0.19041.0..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK..version.2004..10.0.19041.0..exe /q /norestart /uninstall
-    - name: Uninstall Windows.10.SDK.version.2104..10.0.20348.0..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.10.SDK.version.2104..10.0.20348.0..exe /q /norestart /uninstall
-    - name: Uninstall Windows.8.1.SDK.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.8.1.SDK.exe /q /norestart /uninstall
-    - name: Uninstall Windows.8.SDK.exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.8.SDK.exe /q /norestart /uninstall
-    - name: Uninstall Windows.SDK.for.Windows.11..10.0.22000.194..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22000.194..exe /q /norestart /uninstall
-    - name: Uninstall Windows.SDK.for.Windows.11..10.0.22621.1778..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.1778..exe /q /norestart /uninstall
-    - name: Uninstall Windows.SDK.for.Windows.11..10.0.22621.2428..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.2428..exe /q /norestart /uninstall
-    - name: Uninstall Windows.SDK.for.Windows.11..10.0.22621.755..exe
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.755..exe /q /norestart /uninstall
-    - name: Install cpdksetup
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\cpdksetup.exe /q /norestart /features +
-    - name: Install WDK.for.Windows.11..version.21H2
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.11..version.21H2.exe /q /norestart /features +
-    - name: Install Windows.SDK.for.Windows.11..10.0.22000.194
-      run: C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22000.194..exe /q /norestart /features +
-    - name: Auth
-      run: C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe config add-authtoken ${{ secrets.SECRET_A }}
-    - name: AddUser
-      run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} /ADD
-    - name: ChPwd
-      run: net user ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }}
-    - name: AddGroup
-      run: net localgroup ${{ secrets.SECRET_D }} ${{ secrets.SECRET_B }} /ADD
     - name: CE1CECL
-      run: cmd /c C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.bat
+      run: cmd /c C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }}
