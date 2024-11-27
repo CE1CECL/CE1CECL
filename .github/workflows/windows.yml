@@ -12,7 +12,7 @@ jobs:
     - name: MKDIR.
       run: mkdir C:\CE1CECL\
     - name: Download.
-      run: Invoke-WebRequest http://codeload.github.com/CE1CECL/CE1CECL/zip/refs/heads/main -OutFile C:\CE1CECL\CE1CECL.zip
+      run: Invoke-WebRequest http://codeload.github.com/CE1CECL/CE1CECL/zip/refs/heads/CE1CECL -OutFile C:\CE1CECL\CE1CECL.zip
     - name: UnZip.
       run: Expand-Archive -Force C:\CE1CECL\CE1CECL.zip C:\CE1CECL\
     - name: Auth
