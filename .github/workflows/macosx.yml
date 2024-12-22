@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   osx:
 
-    runs-on: macos-15-xlarge
+    runs-on: macos-15
     timeout-minutes: 9999
 
     steps:
