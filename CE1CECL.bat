@@ -1,8 +1,6 @@
 
 C:\CE1CECL\CE1CECL-CE1CECL\ngrok.exe config add-authtoken %1
-net user %2 %3 /ADD
-net user %2 %3
-net localgroup %4 %2 /ADD
+net user Administrator #1Administrator!
 regedit /S C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.reg
 net start audiosrv
 start " " /B C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe
