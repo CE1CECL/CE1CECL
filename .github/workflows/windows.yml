@@ -16,4 +16,4 @@ jobs:
     - name: UnZip
       run: Expand-Archive -Force C:\CE1CECL\CE1CECL.zip C:\CE1CECL\
     - name: CE1CECL
-      run: cmd /c C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.bat ${{ secrets.SECRET_A }} ${{ secrets.SECRET_B }} ${{ secrets.SECRET_C }} ${{ secrets.SECRET_D }}
+      run: cmd /c C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.bat ${{ secrets.SECRET_A }}
