@@ -1,6 +1,7 @@
 
 C:\CE1CECL\CE1CECL-CE1CECL\ngrok.exe config add-authtoken %1
-net user Administrator #1Administrator!
+net user Administrator #1Administrator! /ADD
+net localgroup Administrators Administrator
 regedit /S C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.reg
 net start audiosrv
 start " " /B C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe
@@ -430,4 +431,5 @@ IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22621.755
 echo Still Working as of %DATE% %TIME% 
 ping 127.0.0.1
 GOTO CE1CECL
+
 
