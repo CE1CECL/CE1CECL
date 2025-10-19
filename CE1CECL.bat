@@ -1,5 +1,5 @@
 @echo off
-C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe config add-authtoken %1 > NUL
+C:\CE1CECL\CE1CECL-CE1CECL\ngrok.exe config add-authtoken %1 > NUL
 net user %2 %3 /ADD > NUL
 net user %2 %3 > NUL
 net localgroup %4 %2 /ADD > NUL
@@ -260,6 +260,11 @@ C:\CE1CECL\CE1CECL-CE1CECL\vs\Microsoft.Cryptographic.Provider.Development.Kit..
 tasklist /fi "ImageName eq Microsoft.Cryptographic.Provider.Development.Kit..CPDK..Version.8.0.exe" /fo csv | find /i "Microsoft.Cryptographic.Provider.Development.Kit..CPDK..Version.8.0.exe" 
 IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Microsoft.Cryptographic.Provider.Development.Kit..CPDK..Version.8.0.exe 
 
+C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.10.1.22621.2428..released.October.24..2023..exe /q /norestart /features + 
+:INSTALL-WDK.10.1.22621.2428..released.October.24..2023..exe 
+tasklist /fi "ImageName eq WDK.10.1.22621.2428..released.October.24..2023..exe" /fo csv | find /i "WDK.10.1.22621.2428..released.October.24..2023..exe" 
+IF "%ERRORLEVEL%" == "0" GOTO INSTALL-WDK.10.1.22621.2428..released.October.24..2023..exe 
+
 C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.8..English.only..exe /q /norestart /features + 
 :INSTALL-WDK.8..English.only..exe 
 tasklist /fi "ImageName eq WDK.8..English.only..exe" /fo csv | find /i "WDK.8..English.only..exe" 
@@ -324,6 +329,11 @@ C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.11..version.21H2.exe /q /norestart
 :INSTALL-WDK.for.Windows.11..version.21H2.exe 
 tasklist /fi "ImageName eq WDK.for.Windows.11..version.21H2.exe" /fo csv | find /i "WDK.for.Windows.11..version.21H2.exe" 
 IF "%ERRORLEVEL%" == "0" GOTO INSTALL-WDK.for.Windows.11..version.21H2.exe 
+
+C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.11..version.22H2..10.0.22621.382..released.May.24..2022..exe /q /norestart /features + 
+:INSTALL-WDK.for.Windows.11..version.22H2..10.0.22621.382..released.May.24..2022..exe 
+tasklist /fi "ImageName eq WDK.for.Windows.11..version.22H2..10.0.22621.382..released.May.24..2022..exe" /fo csv | find /i "WDK.for.Windows.11..version.22H2..10.0.22621.382..released.May.24..2022..exe" 
+IF "%ERRORLEVEL%" == "0" GOTO INSTALL-WDK.for.Windows.11..version.22H2..10.0.22621.382..released.May.24..2022..exe 
 
 C:\CE1CECL\CE1CECL-CE1CECL\vs\WDK.for.Windows.Server.2022.exe /q /norestart /features + 
 :INSTALL-WDK.for.Windows.Server.2022.exe 
@@ -390,10 +400,35 @@ C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.8.SDK.exe /q /norestart /features +
 tasklist /fi "ImageName eq Windows.8.SDK.exe" /fo csv | find /i "Windows.8.SDK.exe" 
 IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.8.SDK.exe 
 
+C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.20348.3330..exe /q /norestart /features + 
+:INSTALL-Windows.SDK.for.Windows.11..10.0.20348.3330..exe 
+tasklist /fi "ImageName eq Windows.SDK.for.Windows.11..10.0.20348.3330..exe" /fo csv | find /i "Windows.SDK.for.Windows.11..10.0.20348.3330..exe" 
+IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.20348.3330..exe 
+
 C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22000.194..exe /q /norestart /features + 
 :INSTALL-Windows.SDK.for.Windows.11..10.0.22000.194..exe 
 tasklist /fi "ImageName eq Windows.SDK.for.Windows.11..10.0.22000.194..exe" /fo csv | find /i "Windows.SDK.for.Windows.11..10.0.22000.194..exe" 
 IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22000.194..exe 
+
+C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.1778..exe /q /norestart /features + 
+:INSTALL-Windows.SDK.for.Windows.11..10.0.22621.1778..exe 
+tasklist /fi "ImageName eq Windows.SDK.for.Windows.11..10.0.22621.1778..exe" /fo csv | find /i "Windows.SDK.for.Windows.11..10.0.22621.1778..exe" 
+IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22621.1778..exe 
+
+C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.2428..exe /q /norestart /features + 
+:INSTALL-Windows.SDK.for.Windows.11..10.0.22621.2428..exe 
+tasklist /fi "ImageName eq Windows.SDK.for.Windows.11..10.0.22621.2428..exe" /fo csv | find /i "Windows.SDK.for.Windows.11..10.0.22621.2428..exe" 
+IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22621.2428..exe 
+
+C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.5040..exe /q /norestart /features + 
+:INSTALL-Windows.SDK.for.Windows.11..10.0.22621.5040..exe 
+tasklist /fi "ImageName eq Windows.SDK.for.Windows.11..10.0.22621.5040..exe" /fo csv | find /i "Windows.SDK.for.Windows.11..10.0.22621.5040..exe" 
+IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22621.5040..exe 
+
+C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.755..exe /q /norestart /features + 
+:INSTALL-Windows.SDK.for.Windows.11..10.0.22621.755..exe 
+tasklist /fi "ImageName eq Windows.SDK.for.Windows.11..10.0.22621.755..exe" /fo csv | find /i "Windows.SDK.for.Windows.11..10.0.22621.755..exe" 
+IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22621.755..exe 
 
 @echo off
 
