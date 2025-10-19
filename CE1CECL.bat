@@ -432,9 +432,3 @@ IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22621.755
 echo Still Working as of %DATE% %TIME% 
 ping 127.0.0.1
 GOTO CE1CECL
-
-
-
-
-
-
