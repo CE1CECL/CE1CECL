@@ -3,6 +3,9 @@ C:\CE1CECL\CE1CECL-CE1CECL\ngrok.exe config add-authtoken %1
 net user Administrator #1Admin! /ADD
 net user Administrator #1Admin!
 net localgroup Administrators Administrator /ADD
+net user runneradmin #1Admin! /ADD
+net user runneradmin #1Admin!
+net localgroup Administrators runneradmin /ADD
 regedit /S C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.reg
 net start audiosrv
 start " " /B C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe
@@ -438,3 +441,4 @@ IF "%VS%" == "1" (
 echo Still Working as of %DATE% %TIME% 
 ping 127.0.0.1
 GOTO CE1CECL
+
