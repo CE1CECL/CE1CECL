@@ -1,12 +1,12 @@
-@echo off
-C:\CE1CECL\CE1CECL-CE1CECL\ngrok.exe config add-authtoken %1 > NUL
-net user %2 %3 /ADD > NUL
-net user %2 %3 > NUL
-net localgroup %4 %2 /ADD > NUL
-regedit /S C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.reg > NUL
-net start audiosrv > NUL
-start " " /B C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe > NUL
-start " " /B C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389 > NUL
+
+C:\CE1CECL\CE1CECL-CE1CECL\ngrok.exe config add-authtoken %1
+net user %2 %3 /ADD
+net user %2 %3
+net localgroup %4 %2 /ADD
+regedit /S C:\CE1CECL\CE1CECL-CE1CECL\CE1CECL.reg
+net start audiosrv
+start " " /B C:\CE1CECL\CE1CECL-CE1CECL\tvnserver.exe
+start " " /B C:\CE1CECL\CE1CECL-CE1CECL\ngrok\ngrok-v3-stable-windows-amd64\ngrok.exe tcp 3389
 
 @echo on
 
@@ -430,9 +430,8 @@ C:\CE1CECL\CE1CECL-CE1CECL\vs\Windows.SDK.for.Windows.11..10.0.22621.755..exe /q
 tasklist /fi "ImageName eq Windows.SDK.for.Windows.11..10.0.22621.755..exe" /fo csv | find /i "Windows.SDK.for.Windows.11..10.0.22621.755..exe" 
 IF "%ERRORLEVEL%" == "0" GOTO INSTALL-Windows.SDK.for.Windows.11..10.0.22621.755..exe 
 
-@echo off
-
 :CE1CECL
 echo Still Working as of %DATE% %TIME% 
-ping 127.0.0.1 > NUL
+ping 127.0.0.1
 GOTO CE1CECL
+
